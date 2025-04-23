@@ -7,6 +7,9 @@ use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -33,29 +36,32 @@ class RegisterController extends Controller
             'city_id.exists' => 'The selected city is invalid.',
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->phone = $request->phone;
-        $user->address = $request->address;
-        $user->city_id = $request->city_id;
-        $user->security_question = $request->security_question;
-        $user->security_answer = $request->security_answer;
-        $user->isactive = 1;
-        $user->isadmin = 0;
-
+        // Prepare data for email verification
+        $data = $request->only([
+            'name', 'email', 'password', 'city_id', 'security_question', 'security_answer', 'phone', 'address'
+        ]);
+        $data['password'] = $request->password; // keep as plain for hashing later
+        $data['isactive'] = 1;
+        $data['isadmin'] = 0;
+        // Handle profile picture if present
         if ($request->hasFile('profile_picture')) {
             $file = $request->file('profile_picture');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $user->profile_picture = 'storage/uploads/profile_picture/' . $filename;
-            $file->storeAs('uploads/profile_picture', $filename, 'public');
+            $data['profile_picture_name'] = time() . '.' . $file->getClientOriginalExtension();
+            $data['profile_picture_content'] = base64_encode(file_get_contents($file->getRealPath()));
         }
+        // Generate a short random token
+        $token = bin2hex(random_bytes(32));
+        // Store registration data as JSON in the DB
+        \App\Models\EmailVerification::create([
+            'token' => $token,
+            'data' => json_encode($data),
+            'created_at' => now(),
+        ]);
+        $userStub = (object)[ 'name' => $data['name'], 'email' => $data['email'] ];
+        Log::info('About to send verification email to: ' . $data['email'] . ' with token: ' . $token);
+        Mail::to($data['email'])->send(new \App\Mail\VerifyEmail($userStub, $token));
+        Log::info('Verification email sent to: ' . $data['email']);
 
-        $user->save();
-
-        Auth::login($user);
-        session()->flash('success', 'Registration successful. Now, add your skills!');
-        return redirect()->route('skills.form');
+        return redirect()->route('login')->with('success', 'Registration initiated! Please check your email to verify your address and complete registration.');
     }
 }

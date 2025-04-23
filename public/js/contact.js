@@ -1,21 +1,40 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // In a real application, this would make an API call
-            console.log('Contact form submission:', formData);
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+            const response = await fetch('/contact', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || ''
+                },
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent',
+                    text: result.message || 'Thank you for contacting us!'
+                });
+                form.reset();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Failed to send message. Please try again.'
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'An error occurred. Please try again later.'
+            });
+        }
+    });
 });

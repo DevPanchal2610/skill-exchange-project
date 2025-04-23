@@ -60,7 +60,11 @@ class SkillController extends Controller
         }
 
         session(['skills_submitted' => true]);
-        return redirect()->route('user.index');
+        if (url()->previous() === route('skills.form')) {
+            return redirect()->route('profile')->with('success', 'Skills added successfully!');
+        } else {
+            return redirect()->route('user.index');
+        }
     }
 
     /**

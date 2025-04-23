@@ -38,7 +38,7 @@
                             @csrf
                             <div class="d-flex justify-content-between align-items-end mb-4">
                                 <h3 class="mb-0"><b>Add Your Skills</b></h3>
-                                <a href="/user/demo" class="link-primary">Skip for now</a>
+                                {{-- <a href="/user" class="link-primary">Skip for now</a> --}}
                             </div>
                             <div id="skillsRepeater">
                                 <div class="skill-entry mb-4 border p-3 rounded">
@@ -59,6 +59,7 @@
                                             <option value="Marketing">Marketing</option>
                                             <option value="Writing">Writing</option>
                                             <option value="Carpentry">Carpentry</option>
+                                            <option value="art">Art</option>
                                             <option value="Other">Other</option>
                                         </select>
                                     </div>

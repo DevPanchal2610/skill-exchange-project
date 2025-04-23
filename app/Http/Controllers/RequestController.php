@@ -66,8 +66,13 @@ class RequestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        //
+        $req = \App\Models\Request::find($id);
+        if (!$req) {
+            return response()->json(['success' => false, 'message' => 'Request not found.'], 404);
+        }
+        $req->delete();
+        return response()->json(['success' => true, 'message' => 'Request deleted successfully.']);
     }
 }

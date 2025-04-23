@@ -30,10 +30,10 @@
                 <h1>Skill Exchange</h1>
             </div>
             <div class="nav-links">
-                <a href="{{ asset('index.html') }}">Home</a>
-                <a href="{{ asset('profile.html') }}" class="active">Profile</a>
-                <a href="contact.html">Request Skill</a>
-                <a href="{{ asset('contact.html') }}">Contact</a>
+                <a href="{{ asset('/user') }}">Home</a>
+                <a href="{{ asset('/profile') }}" class="active">Profile</a>
+                <a href="{{ asset('/request') }}">Request Skill</a>
+                <a href="{{ asset('/contact') }}">Contact</a>
                 <a href="{{ url('/logout') }}" class="auth-btn">Logout</a>
             </div>
             {{-- <div class="notification-icon">
@@ -89,8 +89,8 @@
                             <div class="card-footer">
                                 <form action="{{ url('/skill_request') }}" method="POST">
                                   @csrf
-                                  <input type="text" name="assgin_id" value="{{ $id }}">
-                                  <input type="text" name="skill_id" value="{{ $skill->skill_id }}">
+                                  <input type="hidden" name="assgin_id" value="{{ $id }}">
+                                  <input type="hidden" name="skill_id" value="{{ $skill->skill_id }}">
                                   <button type="submit" class="card-action-btn">Request Skill</button>
                                 </form>
                               </div>
@@ -106,6 +106,25 @@
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Skill Exchange</h3>
+                <p>A platform for skill sharing and learning through exchange</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url('/user') }}">Home</a></li>
+                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@skillexchange.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Skill Exchange. All rights reserved.</p>
         </div>
