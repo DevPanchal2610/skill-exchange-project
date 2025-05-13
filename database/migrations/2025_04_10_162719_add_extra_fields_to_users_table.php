@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('security_question', 255)->nullable();
             $table->string('security_answer', 255)->nullable();
 
-            $table->foreign('city_id')->references('city_id')->on('cities');
+            $table->foreign('city_id')->references('city_id')->on('cities')->onDelete('cascade');
         });
     }
 
