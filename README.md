@@ -1,4 +1,3 @@
-
 <!-- Banner -->
 <p align="center">
   <img src="https://img.shields.io/badge/Skill%20Exchange-%F0%9F%A4%9D-blueviolet?style=for-the-badge&logo=hackthebox" alt="Skill Exchange Banner"/>
