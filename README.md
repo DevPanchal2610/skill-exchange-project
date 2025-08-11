@@ -154,8 +154,8 @@ Contributions are always welcome!
 
 ---
 
-## 📫 Contact
+## 📫 Connect with Me
 
-- 📧 Email: youremail@example.com  
-- 💼 LinkedIn: [Your Name](https://www.linkedin.com/in/your-linkedin)  
-- 💻 GitHub: [your-username](https://github.com/your-username)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/dev-panchal2610/)
+- 💻 [GitHub](https://github.com/DevPanchal2610)
+
