@@ -71,9 +71,11 @@ skill-exchange/
 ## 📸 Screenshots
 
 ![Home Page](/public/screenshots/home.png)
-![Skill Details](/public/screenshots/skill-details.png)
-![Request Page](/public/screenshots/request.png)
-![User Dashboard](/public/screenshots/dashboard.png)
+![Login Page](/public/screenshots/login.png)
+![User profile](/public/screenshots/profile.png)
+![Contact Us](/public/screenshots/contact.png)
+![Request Page](/public/screenshots/skillExchange.png)
+![Admin Dashboard](/public/screenshots/admin.png)
 
 ---
 
