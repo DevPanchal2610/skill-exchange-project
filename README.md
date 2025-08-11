@@ -1,90 +1,67 @@
-<!-- Banner -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Skill%20Exchange-%F0%9F%A4%9D-blueviolet?style=for-the-badge&logo=hackthebox" alt="Skill Exchange Banner"/>
-</p>
+# ![Skill Exchange Banner](/skill-exchange/public/screenshots/banner.png)
 
-<h1 align="center">🤝 Skill Exchange Platform</h1>
-<p align="center"><em>A modern barter-style web app where people exchange skills — no money, only mutual help.</em></p>
+<div align="center">
+  
+[![Made with PHP](https://img.shields.io/badge/Made%20with-PHP-777BB4?logo=php&logoColor=white)](https://www.php.net/)
+[![Laravel](https://img.shields.io/badge/Laravel-FF2D20?logo=laravel&logoColor=white)](https://laravel.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-005C84?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Tech-Laravel%20%7C%20PHP%20%7C%20MySQL-blue?style=flat-square&logo=laravel" alt="Tech">
-  <img src="https://img.shields.io/badge/Status-Production%20Ready-yellow?style=flat-square" alt="Status">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
-</p>
-
----
-
-## 🔥 Demo & Screenshots
-
-> Add your screenshots in `/screenshots` folder. Recommended: `1200px` width.
-
-| Homepage | Request Flow | Requests Dashboard |
-|---|---|---|
-| ![home](screenshots/home_page.png) | ![request](screenshots/user_profile.png) | ![dashboard](screenshots/requests.png) |
+</div>
 
 ---
 
-## 📖 Overview
+## 📖 About the Project
 
-**Skill Exchange** lets users:
-- Browse skills offered by others.
-- Request a skill and **offer one of their own** in return.
-- Skill owner reviews request + offered skill.
-- When both parties accept, exchange is assigned/confirmed.
+**Skill Exchange** is a dynamic platform that enables people to exchange their skills without any monetary transactions.  
+Imagine: you are a **Plumber** who needs a **Hand-Painted Portrait**, and there’s a **Painter** who needs their **Bathroom Shower Fixed** — both can connect and swap skills!
 
-This design fosters community learning and direct barter — no cash, just skills.
+### 💡 How it Works
+1. Browse all available skills on the **Home Page**.
+2. Send a request for any skill you want.
+3. The skill owner can review the request **and** see what you are offering in return.
+4. If both agree, the skills are assigned to each party.
 
 ---
 
 ## ✨ Features
-
-- 🔍 Browse & search skills
-- 📩 Send a skill request with an offered skill
-- 👀 Owners can review incoming requests
-- ✅ Mutual approval flow to confirm exchange
-- ⭐ Ratings & reviews after exchange (optional)
-- 📱 Responsive UI with Bootstrap
+- 🔍 **Browse Skills** – View all skills listed by other users.
+- 📩 **Request Skills** – Send a request and offer your skill in exchange.
+- 🤝 **Mutual Agreement** – Both parties must accept before the exchange is confirmed.
+- 📜 **Skill Listings** – Easily add, update, or remove your skills.
+- 📱 **Responsive Design** – Works on desktop, tablet, and mobile.
 
 ---
 
-## 🧭 Table of Contents
+## 🛠 Tech Stack
 
-- [Tech Stack](#-tech-stack)
-- [Quick Start](#-quick-start)
-- [Project Structure](#-project-structure)
-- [Core DB / API design](#-core-db--api-design)
-- [Contributing](#-contributing)
-- [License & Contact](#-license--contact)
-
----
-
-## 🛠️ Tech Stack
-
-- Frontend: HTML, CSS, JavaScript, Bootstrap  
-- Backend: Laravel (PHP)  
-- DB: MySQL
+| Technology  | Description |
+|-------------|-------------|
+| **Front-end** | HTML, CSS, JavaScript, Bootstrap |
+| **Back-end**  | Laravel (PHP Framework) |
+| **Database**  | MySQL |
+| **Other**     | Composer, npm |
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-# clone
-git clone https://github.com/DevPanchal2610/skill-exchange-project.git
-cd skill-exchange-project
-
-# install
-composer install
-npm install && npm run dev   # if using assets
-
-# env
-cp .env.example .env
-# update DB credentials in .env
-
-php artisan key:generate
-php artisan migrate
-php artisan db:seed   # optional seeders
-
-# serve
-php artisan serve
-# open http://localhost:8000
+## 📂 Project Structure
+```plaintext
+skill-exchange/
+├── app/                 # Application logic (Models, Controllers)
+├── bootstrap/           # Laravel bootstrap files
+├── config/              # Configuration files
+├── database/            # Migrations and seeds
+├── public/               # Publicly accessible files (CSS, JS, images)
+├── resources/           # Views (Blade templates), assets
+├── routes/              # Route definitions
+├── storage/             # Logs, compiled templates
+├── tests/               # Test cases
+├── vendor/              # Composer dependencies
+├── .env.example         # Environment variable example
+├── artisan              # Laravel CLI
+├── composer.json        # Composer configuration
+├── package.json         # NPM configuration
+├── vite.config.js       # Vite bundler config
+└── README.md            # Project documentation
