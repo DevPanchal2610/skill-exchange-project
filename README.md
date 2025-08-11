@@ -65,3 +65,97 @@ skill-exchange/
 ├── package.json         # NPM configuration
 ├── vite.config.js       # Vite bundler config
 └── README.md            # Project documentation
+
+---
+
+## 📸 Screenshots
+
+![Home Page](/public/screenshots/home.png)
+![Skill Details](/public/screenshots/skill-details.png)
+![Request Page](/public/screenshots/request.png)
+![User Dashboard](/public/screenshots/dashboard.png)
+
+---
+
+## 🛠️ Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/skill-exchange.git
+   ```
+
+2. **Navigate into the Project**
+   ```bash
+   cd skill-exchange
+   ```
+
+3. **Install PHP Dependencies**
+   ```bash
+   composer install
+   ```
+
+4. **Install JavaScript Dependencies**
+   ```bash
+   npm install
+   ```
+
+5. **Set up Environment Variables**
+   - Copy `.env.example` to `.env`
+     ```bash
+     cp .env.example .env
+     ```
+   - Update database name, username, and password in `.env`
+
+6. **Generate App Key**
+   ```bash
+   php artisan key:generate
+   ```
+
+7. **Run Migrations**
+   ```bash
+   php artisan migrate
+   ```
+
+8. **Serve the Application**
+   ```bash
+   php artisan serve
+   ```
+   Access the app at `http://localhost:8000`
+
+---
+
+## 🤝 Contributing
+
+Contributions are always welcome!
+
+1. Fork the repository  
+2. Create a feature branch  
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes  
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. Push to your branch  
+   ```bash
+   git push origin feature-name
+   ```
+5. Create a Pull Request
+
+---
+
+## 🙌 Acknowledgements
+
+- [Laravel](https://laravel.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [MySQL](https://www.mysql.com/)
+
+---
+
+## 📫 Contact
+
+- 📧 Email: youremail@example.com  
+- 💼 LinkedIn: [Your Name](https://www.linkedin.com/in/your-linkedin)  
+- 💻 GitHub: [your-username](https://github.com/your-username)  
