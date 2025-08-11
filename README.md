@@ -70,12 +70,13 @@ skill-exchange/
 
 ## 📸 Screenshots
 
-![Home Page](/public/screenshots/home.png)
-![Login Page](/public/screenshots/login.png)
-![User profile](/public/screenshots/profile.png)
-![Contact Us](/public/screenshots/contact.png)
-![Request Page](/public/screenshots/skillExchange.png)
-![Admin Dashboard](/public/screenshots/admin.png)
+![Home Page](https://raw.githubusercontent.com/DevPanchal2610/skill-exchange-project/main/public/screenshots/home.png)
+![Login Page](https://raw.githubusercontent.com/DevPanchal2610/skill-exchange-project/main/public/screenshots/login.png)
+![User Profile](https://raw.githubusercontent.com/DevPanchal2610/skill-exchange-project/main/public/screenshots/profile.png)
+![Contact Us](https://raw.githubusercontent.com/DevPanchal2610/skill-exchange-project/main/public/screenshots/contact.png)
+![Request Page](https://raw.githubusercontent.com/DevPanchal2610/skill-exchange-project/main/public/screenshots/skillExchange.png)
+![Admin Dashboard](https://raw.githubusercontent.com/DevPanchal2610/skill-exchange-project/main/public/screenshots/admin.png)
+
 
 ---
 
