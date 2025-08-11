@@ -1,4 +1,4 @@
-# ![Skill Exchange Banner](/skill-exchange/public/screenshots/banner.png)
+# ![Skill Exchange Banner](/public/screenshots/banner.png)
 
 <div align="center">
   
